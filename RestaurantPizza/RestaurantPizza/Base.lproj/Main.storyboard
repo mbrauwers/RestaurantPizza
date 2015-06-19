@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VoN-4V-0S3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xEt-sM-ObD">
+            <objects>
+                <navigationController id="VoN-4V-0S3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vja-1o-3Tn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NKN-23-TKu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1K3-Th-ge0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1284" y="296"/>
+        </scene>
+        <!--Find Nearby Pizza Restaurants-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Find Nearby Pizza Restaurants" id="BYZ-38-t0r" customClass="PizzaRestaurantsMainController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="83N-pG-ga2">
+                                <rect key="frame" x="0.0" y="122" width="600" height="478"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gCk-am-AC4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="T9P-AB-2ZD"/>
+                                </connections>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for restaurants..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX7-cd-Hab">
+                                <rect key="frame" x="186" y="93" width="228" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="228" id="K4g-2Y-Av1"/>
+                                    <constraint firstAttribute="height" constant="21" id="zef-aW-krp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CyG-Pp-8sR">
+                                <rect key="frame" x="290" y="72" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="rle-PO-Fa9"/>
+                                    <constraint firstAttribute="width" constant="20" id="rtP-AO-WLY"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-qW-Hxy">
+                                <rect key="frame" x="214" y="93" width="172" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="Jxp-hi-RYq"/>
+                                    <constraint firstAttribute="height" constant="21" id="NKl-Bc-sDn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2E-tg-Juq">
+                                <rect key="frame" x="502" y="89" width="91" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aXa-d7-ZC6"/>
+                                    <constraint firstAttribute="width" constant="91" id="qgU-fJ-NFd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Search Again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cHb-HC-kuS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="AX7-cd-Hab" secondAttribute="centerX" id="1DG-g3-mR9"/>
+                            <constraint firstItem="UXR-qW-Hxy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="93" id="1SD-in-2nX"/>
+                            <constraint firstItem="s2E-tg-Juq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="89" id="9Ns-bX-Bvf"/>
+                            <constraint firstItem="83N-pG-ga2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Vh-o7-XRc"/>
+                            <constraint firstItem="CyG-Pp-8sR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="72" id="KbR-Of-3zn"/>
+                            <constraint firstItem="83N-pG-ga2" firstAttribute="top" secondItem="AX7-cd-Hab" secondAttribute="bottom" constant="8" id="M3Q-O1-pF5"/>
+                            <constraint firstAttribute="centerX" secondItem="CyG-Pp-8sR" secondAttribute="centerX" id="UmN-rW-dRc"/>
+                            <constraint firstAttribute="trailing" secondItem="s2E-tg-Juq" secondAttribute="trailing" constant="7" id="Y4G-rY-fvp"/>
+                            <constraint firstItem="AX7-cd-Hab" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="93" id="caz-AN-Lho"/>
+                            <constraint firstAttribute="trailing" secondItem="83N-pG-ga2" secondAttribute="trailing" id="n6v-Eq-8ib"/>
+                            <constraint firstAttribute="bottom" secondItem="83N-pG-ga2" secondAttribute="bottom" id="pxx-yf-Cjn"/>
+                            <constraint firstAttribute="centerX" secondItem="UXR-qW-Hxy" secondAttribute="centerX" id="yUf-sW-V6d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Find Neaby Pizza Restaurants" id="erV-0s-jjH"/>
+                    <connections>
+                        <outlet property="foundRestLbl" destination="UXR-qW-Hxy" id="XcP-Kq-mwO"/>
+                        <outlet property="searchActivityIndicator" destination="CyG-Pp-8sR" id="e4O-Dg-SGJ"/>
+                        <outlet property="searchAgainBut" destination="s2E-tg-Juq" id="H2t-Mv-RGa"/>
+                        <outlet property="searchProgressLbl" destination="AX7-cd-Hab" id="fP1-g3-bf5"/>
+                        <outlet property="tblView" destination="83N-pG-ga2" id="vZx-1B-d3w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="311"/>
+        </scene>
+    </scenes>
+</document>

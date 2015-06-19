@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F24CA3A51B344D86000FBE38 /* RestaurantsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F24CA3A41B344D86000FBE38 /* RestaurantsTableViewCell.m */; };
+		F24CA3A71B344D95000FBE38 /* RestaurantsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24CA3A61B344D95000FBE38 /* RestaurantsTableViewCell.xib */; };
+		F25A9F0D1B3432190096C1EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F0C1B3432190096C1EB /* main.m */; };
+		F25A9F101B3432190096C1EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F0F1B3432190096C1EB /* AppDelegate.m */; };
+		F25A9F131B3432190096C1EB /* RestaurantPizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F111B3432190096C1EB /* RestaurantPizza.xcdatamodeld */; };
+		F25A9F161B3432190096C1EB /* PizzaRestaurantsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F151B3432190096C1EB /* PizzaRestaurantsMainController.m */; };
+		F25A9F191B3432190096C1EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25A9F171B3432190096C1EB /* Main.storyboard */; };
+		F25A9F1B1B3432190096C1EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25A9F1A1B3432190096C1EB /* Images.xcassets */; };
+		F25A9F1E1B3432190096C1EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25A9F1C1B3432190096C1EB /* LaunchScreen.xib */; };
+		F25A9F2A1B3432190096C1EB /* RestaurantPizzaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F291B3432190096C1EB /* RestaurantPizzaTests.m */; };
+		F25A9F361B343B820096C1EB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25A9F351B343B820096C1EB /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F25A9F241B3432190096C1EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F25A9EFF1B3432190096C1EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F25A9F061B3432190096C1EB;
+			remoteInfo = RestaurantPizza;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F24CA3A31B344D86000FBE38 /* RestaurantsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsTableViewCell.h; sourceTree = "<group>"; };
+		F24CA3A41B344D86000FBE38 /* RestaurantsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsTableViewCell.m; sourceTree = "<group>"; };
+		F24CA3A61B344D95000FBE38 /* RestaurantsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantsTableViewCell.xib; sourceTree = "<group>"; };
+		F25A9F071B3432190096C1EB /* RestaurantPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25A9F0B1B3432190096C1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F25A9F0C1B3432190096C1EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F25A9F0E1B3432190096C1EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F25A9F0F1B3432190096C1EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F25A9F121B3432190096C1EB /* RestaurantPizza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RestaurantPizza.xcdatamodel; sourceTree = "<group>"; };
+		F25A9F141B3432190096C1EB /* PizzaRestaurantsMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PizzaRestaurantsMainController.h; sourceTree = "<group>"; };
+		F25A9F151B3432190096C1EB /* PizzaRestaurantsMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PizzaRestaurantsMainController.m; sourceTree = "<group>"; };
+		F25A9F181B3432190096C1EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F25A9F1A1B3432190096C1EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F25A9F1D1B3432190096C1EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F25A9F231B3432190096C1EB /* RestaurantPizzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantPizzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25A9F281B3432190096C1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F25A9F291B3432190096C1EB /* RestaurantPizzaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantPizzaTests.m; sourceTree = "<group>"; };
+		F25A9F331B343B730096C1EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F25A9F351B343B820096C1EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F25A9F041B3432190096C1EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F25A9F361B343B820096C1EB /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F25A9F201B3432190096C1EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F24CA3A21B344D72000FBE38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F24CA3A31B344D86000FBE38 /* RestaurantsTableViewCell.h */,
+				F24CA3A41B344D86000FBE38 /* RestaurantsTableViewCell.m */,
+				F24CA3A61B344D95000FBE38 /* RestaurantsTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F25A9EFE1B3432190096C1EB = {
+			isa = PBXGroup;
+			children = (
+				F25A9F371B343B8C0096C1EB /* Frameworks */,
+				F25A9F091B3432190096C1EB /* RestaurantPizza */,
+				F25A9F261B3432190096C1EB /* RestaurantPizzaTests */,
+				F25A9F081B3432190096C1EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F25A9F081B3432190096C1EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F25A9F071B3432190096C1EB /* RestaurantPizza.app */,
+				F25A9F231B3432190096C1EB /* RestaurantPizzaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F25A9F091B3432190096C1EB /* RestaurantPizza */ = {
+			isa = PBXGroup;
+			children = (
+				F24CA3A21B344D72000FBE38 /* Views */,
+				F25A9F0E1B3432190096C1EB /* AppDelegate.h */,
+				F25A9F0F1B3432190096C1EB /* AppDelegate.m */,
+				F25A9F141B3432190096C1EB /* PizzaRestaurantsMainController.h */,
+				F25A9F151B3432190096C1EB /* PizzaRestaurantsMainController.m */,
+				F25A9F171B3432190096C1EB /* Main.storyboard */,
+				F25A9F1A1B3432190096C1EB /* Images.xcassets */,
+				F25A9F1C1B3432190096C1EB /* LaunchScreen.xib */,
+				F25A9F111B3432190096C1EB /* RestaurantPizza.xcdatamodeld */,
+				F25A9F0A1B3432190096C1EB /* Supporting Files */,
+			);
+			path = RestaurantPizza;
+			sourceTree = "<group>";
+		};
+		F25A9F0A1B3432190096C1EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F25A9F0B1B3432190096C1EB /* Info.plist */,
+				F25A9F0C1B3432190096C1EB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F25A9F261B3432190096C1EB /* RestaurantPizzaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F25A9F291B3432190096C1EB /* RestaurantPizzaTests.m */,
+				F25A9F271B3432190096C1EB /* Supporting Files */,
+			);
+			path = RestaurantPizzaTests;
+			sourceTree = "<group>";
+		};
+		F25A9F271B3432190096C1EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F25A9F281B3432190096C1EB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F25A9F371B343B8C0096C1EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F25A9F351B343B820096C1EB /* CoreLocation.framework */,
+				F25A9F331B343B730096C1EB /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F25A9F061B3432190096C1EB /* RestaurantPizza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F25A9F2D1B3432190096C1EB /* Build configuration list for PBXNativeTarget "RestaurantPizza" */;
+			buildPhases = (
+				F25A9F031B3432190096C1EB /* Sources */,
+				F25A9F041B3432190096C1EB /* Frameworks */,
+				F25A9F051B3432190096C1EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RestaurantPizza;
+			productName = RestaurantPizza;
+			productReference = F25A9F071B3432190096C1EB /* RestaurantPizza.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F25A9F221B3432190096C1EB /* RestaurantPizzaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F25A9F301B3432190096C1EB /* Build configuration list for PBXNativeTarget "RestaurantPizzaTests" */;
+			buildPhases = (
+				F25A9F1F1B3432190096C1EB /* Sources */,
+				F25A9F201B3432190096C1EB /* Frameworks */,
+				F25A9F211B3432190096C1EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F25A9F251B3432190096C1EB /* PBXTargetDependency */,
+			);
+			name = RestaurantPizzaTests;
+			productName = RestaurantPizzaTests;
+			productReference = F25A9F231B3432190096C1EB /* RestaurantPizzaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F25A9EFF1B3432190096C1EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Maicon Brauwers";
+				TargetAttributes = {
+					F25A9F061B3432190096C1EB = {
+						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					F25A9F221B3432190096C1EB = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = F25A9F061B3432190096C1EB;
+					};
+				};
+			};
+			buildConfigurationList = F25A9F021B3432190096C1EB /* Build configuration list for PBXProject "RestaurantPizza" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F25A9EFE1B3432190096C1EB;
+			productRefGroup = F25A9F081B3432190096C1EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F25A9F061B3432190096C1EB /* RestaurantPizza */,
+				F25A9F221B3432190096C1EB /* RestaurantPizzaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F25A9F051B3432190096C1EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F24CA3A71B344D95000FBE38 /* RestaurantsTableViewCell.xib in Resources */,
+				F25A9F191B3432190096C1EB /* Main.storyboard in Resources */,
+				F25A9F1E1B3432190096C1EB /* LaunchScreen.xib in Resources */,
+				F25A9F1B1B3432190096C1EB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F25A9F211B3432190096C1EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F25A9F031B3432190096C1EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F25A9F131B3432190096C1EB /* RestaurantPizza.xcdatamodeld in Sources */,
+				F25A9F101B3432190096C1EB /* AppDelegate.m in Sources */,
+				F25A9F161B3432190096C1EB /* PizzaRestaurantsMainController.m in Sources */,
+				F24CA3A51B344D86000FBE38 /* RestaurantsTableViewCell.m in Sources */,
+				F25A9F0D1B3432190096C1EB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F25A9F1F1B3432190096C1EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F25A9F2A1B3432190096C1EB /* RestaurantPizzaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F25A9F251B3432190096C1EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F25A9F061B3432190096C1EB /* RestaurantPizza */;
+			targetProxy = F25A9F241B3432190096C1EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F25A9F171B3432190096C1EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F25A9F181B3432190096C1EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F25A9F1C1B3432190096C1EB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F25A9F1D1B3432190096C1EB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F25A9F2B1B3432190096C1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F25A9F2C1B3432190096C1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F25A9F2E1B3432190096C1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RestaurantPizza/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F25A9F2F1B3432190096C1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RestaurantPizza/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F25A9F311B3432190096C1EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RestaurantPizzaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestaurantPizza.app/RestaurantPizza";
+			};
+			name = Debug;
+		};
+		F25A9F321B3432190096C1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RestaurantPizzaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestaurantPizza.app/RestaurantPizza";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F25A9F021B3432190096C1EB /* Build configuration list for PBXProject "RestaurantPizza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F25A9F2B1B3432190096C1EB /* Debug */,
+				F25A9F2C1B3432190096C1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F25A9F2D1B3432190096C1EB /* Build configuration list for PBXNativeTarget "RestaurantPizza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F25A9F2E1B3432190096C1EB /* Debug */,
+				F25A9F2F1B3432190096C1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F25A9F301B3432190096C1EB /* Build configuration list for PBXNativeTarget "RestaurantPizzaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F25A9F311B3432190096C1EB /* Debug */,
+				F25A9F321B3432190096C1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F25A9F111B3432190096C1EB /* RestaurantPizza.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F25A9F121B3432190096C1EB /* RestaurantPizza.xcdatamodel */,
+			);
+			currentVersion = F25A9F121B3432190096C1EB /* RestaurantPizza.xcdatamodel */;
+			path = RestaurantPizza.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F25A9EFF1B3432190096C1EB /* Project object */;
+}
