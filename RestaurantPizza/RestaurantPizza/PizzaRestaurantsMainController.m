@@ -75,18 +75,22 @@
         return;
     }
     
+    
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         //request authorization by the user first before we can have his location
         NSLog(@"this is the case");
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
-        [self.locationManager requestWhenInUseAuthorization];
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        else {
+            [self startStandardLocationUpdates];
+        }
     }
-    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways ||
-             [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse)
-    {
+    else {
         //we can try to get his location immediately
-        [self startSignificantChangeUpdates];
+        [self startStandardLocationUpdates];
     }
     
 }
@@ -100,21 +104,6 @@
 - (IBAction)searchAgainTapped:(id)sender {
     if (self.isDoingSearch) { return; }
     [self searchForPlaces];
-}
-
-- (void)startSignificantChangeUpdates {
-    NSLog(@"startSignificantChangeUpdates");
-    
-    // Create the location manager if this object does not
-    // already have one.
-    if (nil == self.locationManager) {
-        NSLog(@"creating location manager[1]");
-        self.locationManager = [[CLLocationManager alloc] init];
-    }
-    
-    NSLog(@"location manager is %@", self.locationManager);
-    
-    self.locationManager.delegate = self;
 }
 
 //start getting the user location
