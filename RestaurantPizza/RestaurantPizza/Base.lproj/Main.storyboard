@@ -50,23 +50,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CyG-Pp-8sR">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CyG-Pp-8sR">
                                 <rect key="frame" x="290" y="72" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="rle-PO-Fa9"/>
                                     <constraint firstAttribute="width" constant="20" id="rtP-AO-WLY"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-qW-Hxy">
-                                <rect key="frame" x="214" y="93" width="172" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="172" id="Jxp-hi-RYq"/>
-                                    <constraint firstAttribute="height" constant="21" id="NKl-Bc-sDn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2E-tg-Juq">
                                 <rect key="frame" x="502" y="89" width="91" height="30"/>
                                 <constraints>
@@ -81,11 +71,21 @@
                                     <action selector="searchAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cHb-HC-kuS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-qW-Hxy">
+                                <rect key="frame" x="214" y="72" width="172" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="Jxp-hi-RYq"/>
+                                    <constraint firstAttribute="height" constant="21" id="NKl-Bc-sDn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="AX7-cd-Hab" secondAttribute="centerX" id="1DG-g3-mR9"/>
-                            <constraint firstItem="UXR-qW-Hxy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="93" id="1SD-in-2nX"/>
+                            <constraint firstItem="UXR-qW-Hxy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="72" id="1SD-in-2nX"/>
                             <constraint firstItem="s2E-tg-Juq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="89" id="9Ns-bX-Bvf"/>
                             <constraint firstItem="83N-pG-ga2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Vh-o7-XRc"/>
                             <constraint firstItem="CyG-Pp-8sR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="72" id="KbR-Of-3zn"/>

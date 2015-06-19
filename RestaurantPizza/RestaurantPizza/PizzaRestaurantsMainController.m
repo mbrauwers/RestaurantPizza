@@ -10,9 +10,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import "RestaurantsTableViewCell.h"
 #import "RestaurantDetailViewController.h"
+#import "AppDelegate.h"
+#import "PizzaPlace.h"
 
 #define kFoursquareClientKey @"S55S3TO5FTVJFNEVLWMEAZE4JYRPXQHD1DL45J3AFYWALSHH"
 #define kFoursquareClientSecret @"3ZVMLG1PWLTJZFWO4OLLFRZEN0GLZQTXIMRFBF1MVIE1UV3I"
+#define kCoreDataImportDone @"ImportDoneNotif"
+
 
 @interface PizzaRestaurantsMainController () <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
@@ -52,18 +56,24 @@
     
     //registers custtom nib file
     [self.tblView registerNib: [UINib nibWithNibName:@"RestaurantsTableViewCell" bundle:nil]  forCellReuseIdentifier:@"Cell"];
+ 
+    //notification handler for when core data importing is ready
+    [[NSNotificationCenter defaultCenter] addObserverForName:kCoreDataImportDone object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSLog(@"Received code data import notification");
+        //shows restaurants
+        [self showRestaurants];
+    }];
     
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
     if (![CLLocationManager locationServicesEnabled]) {
         UIAlertView* av = [[UIAlertView alloc] initWithTitle:@"Please enable location services" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [av show];
         return;
     }
-    
-
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"auth status: %d", [CLLocationManager authorizationStatus]);
     
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         //request authorization by the user first before we can have his location
@@ -78,7 +88,9 @@
         //we can try to get his location immediately
         [self startSignificantChangeUpdates];
     }
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -87,7 +99,6 @@
 
 - (IBAction)searchAgainTapped:(id)sender {
     if (self.isDoingSearch) { return; }
-    
     [self searchForPlaces];
 }
 
@@ -148,6 +159,7 @@
     //search for places in this area
     [self searchForPlaces];
     
+    //FOR SIMPLIFICATION!!!!!!!!!!
     [self.locationManager stopUpdatingLocation];
 }
 
@@ -163,6 +175,12 @@
     self.searchAgainBut.hidden = YES;
     self.searchActivityIndicator.hidden = NO;
     self.searchProgressLbl.hidden = NO;
+    [self.searchActivityIndicator startAnimating];
+    
+    
+    AppDelegate* appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext* defaultContext = appDelegate.managedObjectContext;
+
     
     //we perform the API query in background
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
@@ -197,35 +215,89 @@
             [self showErrorInMainQueue:@"Wrong Kind of Json Object"];
             return;
         }
-
+        
+        //creates/updates core data object
+        [self createOrUpdateManagedObjectsWithParentContext: defaultContext Items: parsedJSON[@"response"][@"groups"][0][@"items"]];
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateWithDataFromFoursquare: parsedJSON];
+            
+            //saves the main context
+            [defaultContext performBlock:^{
+                NSError* error2;
+                [defaultContext save:&error2];
+                if (error2 != nil) {
+                    NSLog(@"error saving main context");
+                }
+            }];
+            
+            //posts notification that we have the data
+            [[NSNotificationCenter defaultCenter] postNotificationName:kCoreDataImportDone object:self];
+            
         });
         
         
     });
 }
 
-//updates with data from foursquare
-- (void) updateWithDataFromFoursquare: (NSDictionary*) parsedJSON {
-    NSArray* groups = parsedJSON[@"response"][@"groups"];
-    NSArray* items = groups[0][@"items"];
+//creates or updates managed objects from the data returned by the api call
+- (void) createOrUpdateManagedObjectsWithParentContext: (NSManagedObjectContext*) parentContext Items: (NSArray*) items {
+    //creates a new background context
+    NSManagedObjectContext *localContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [localContext setParentContext: parentContext];
     
-    
-    //sorts by name
-    self.places = [items sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSDictionary* item1 = (NSDictionary*) obj1;
-        NSDictionary* item2 = (NSDictionary*) obj2;
+    [localContext performBlockAndWait:^{
+        //creates/updates model object for each item
+        for(NSDictionary* item in items) {
+            
+            NSString* foursquareId = item[@"venue"][@"id"];
+            
+            PizzaPlace* pizzaPlace = [PizzaPlace findPlaceWithFoursquareId:foursquareId OnContext:localContext];
+            
+            if (pizzaPlace == nil) {
+                pizzaPlace = [NSEntityDescription
+                                          insertNewObjectForEntityForName:@"PizzaPlace"
+                                          inManagedObjectContext:localContext];
+            }
+            
+            pizzaPlace.foursquareId = foursquareId;
+            pizzaPlace.name = item[@"venue"][@"name"];
+            pizzaPlace.rating = item[@"venue"][@"rating"];
+            pizzaPlace.address = item[@"venue"][@"location"][@"address"];
+            pizzaPlace.city = item[@"venue"][@"location"][@"city"];
+            pizzaPlace.phoneContact = item[@"venue"][@"contact"][@"formattedPhone"];
+         
+        }
         
-        NSString* str1 = item1[@"venue"][@"name"];
-        NSString* str2 = item2[@"venue"][@"name"];
+        //now save the context
+        NSError* error;
+        [localContext save:&error];
         
-        return [str1 compare:str2];
+        if (error != nil) {
+            NSLog(@"There was an error saving: %@", error);
+        }
+        
     }];
     
-    NSLog(@"places: %@", self.places);
+    NSLog(@"After completing core data");
+}
+
+
+//updates with data from foursquare
+- (void) showRestaurants {
+    
+    AppDelegate* appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext* defaultContext = appDelegate.managedObjectContext;
+    
+    self.places = [PizzaPlace getAllRestaurantsWithContext: defaultContext];
     
     [self.tblView reloadData];
+    
+    [self.searchActivityIndicator stopAnimating];
+    self.searchProgressLbl.hidden = YES;
+    self.foundRestLbl.hidden = NO;
+    self.searchAgainBut.hidden = NO;
+    
 }
 
 
@@ -242,12 +314,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RestaurantsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDictionary* place = self.places[indexPath.row];
-    
-    NSLog(@"name is %@", place[@"venue"][@"name"]);
-    
-    cell.nameLbl.text = place[@"venue"][@"name"];
+    PizzaPlace* place = self.places[indexPath.row];
+    cell.nameLbl.text = place.name;
     return cell;
 }
 
@@ -261,7 +329,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass: [RestaurantDetailViewController class]]) {
         RestaurantDetailViewController* rvc = (RestaurantDetailViewController*) segue.destinationViewController;
-        rvc.restaurantInfo = self.places[self.selectedIndex];
+        rvc.pizzaPlace = self.places[self.selectedIndex];
     }
 }
 

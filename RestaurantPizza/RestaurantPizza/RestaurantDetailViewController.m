@@ -7,6 +7,7 @@
 //
 
 #import "RestaurantDetailViewController.h"
+#import "PizzaPlace.h"
 
 @interface RestaurantDetailViewController() <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = self.restaurantInfo[@"venue"][@"name"];
+    self.navigationItem.title = self.pizzaPlace.name;
     [self.tblView reloadData];
 }
 
@@ -31,15 +32,15 @@
     
     NSString* content;
     if (indexPath.row == 0) {
-        content = [NSString stringWithFormat:@"Name: %@", self.restaurantInfo[@"venue"][@"name"]];
+        content = [NSString stringWithFormat:@"Name: %@", self.pizzaPlace.name];
     }
     else if (indexPath.row == 1) {
-        content = [NSString stringWithFormat:@"Rating: %@", self.restaurantInfo[@"venue"][@"rating"]];
+        content = [NSString stringWithFormat:@"Rating: %@", self.pizzaPlace.rating];
     }
     else if (indexPath.row == 2) {
         
-        if (self.restaurantInfo[@"venue"][@"location"][@"address"] != nil) {
-            content = [NSString stringWithFormat:@"Address: %@ %@", self.restaurantInfo[@"venue"][@"location"][@"address"], self.restaurantInfo[@"venue"][@"location"][@"city"]];
+        if (self.pizzaPlace.address != nil) {
+            content = [NSString stringWithFormat:@"Address: %@ %@", self.pizzaPlace.address, self.pizzaPlace.city];
         }
         else {
             content = @"Address: Not Provided";
@@ -47,7 +48,7 @@
         
     }
     else if (indexPath.row == 3) {
-        NSString* phoneContact = self.restaurantInfo[@"venue"][@"contact"][@"formattedPhone"];
+        NSString* phoneContact = self.pizzaPlace.phoneContact;
         if (phoneContact == nil) { phoneContact = @"None"; }
         content = [NSString stringWithFormat:@"Phone Contact: %@", phoneContact];
     }

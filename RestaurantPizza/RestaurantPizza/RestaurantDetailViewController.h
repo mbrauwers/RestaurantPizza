@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class PizzaPlace;
+
 @interface RestaurantDetailViewController : UIViewController
 
-@property (nonatomic, strong) NSDictionary* restaurantInfo;
+@property (nonatomic, strong) PizzaPlace* pizzaPlace;
 
 @end
