@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F24CA3A51B344D86000FBE38 /* RestaurantsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F24CA3A41B344D86000FBE38 /* RestaurantsTableViewCell.m */; };
 		F24CA3A71B344D95000FBE38 /* RestaurantsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24CA3A61B344D95000FBE38 /* RestaurantsTableViewCell.xib */; };
+		F24CA3AB1B34506F000FBE38 /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24CA3AA1B34506F000FBE38 /* RestaurantDetailViewController.m */; };
 		F25A9F0D1B3432190096C1EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F0C1B3432190096C1EB /* main.m */; };
 		F25A9F101B3432190096C1EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F0F1B3432190096C1EB /* AppDelegate.m */; };
 		F25A9F131B3432190096C1EB /* RestaurantPizza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F25A9F111B3432190096C1EB /* RestaurantPizza.xcdatamodeld */; };
@@ -34,6 +35,8 @@
 		F24CA3A31B344D86000FBE38 /* RestaurantsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsTableViewCell.h; sourceTree = "<group>"; };
 		F24CA3A41B344D86000FBE38 /* RestaurantsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsTableViewCell.m; sourceTree = "<group>"; };
 		F24CA3A61B344D95000FBE38 /* RestaurantsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantsTableViewCell.xib; sourceTree = "<group>"; };
+		F24CA3A91B34506F000FBE38 /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
+		F24CA3AA1B34506F000FBE38 /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
 		F25A9F071B3432190096C1EB /* RestaurantPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25A9F0B1B3432190096C1EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F25A9F0C1B3432190096C1EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				F25A9F1C1B3432190096C1EB /* LaunchScreen.xib */,
 				F25A9F111B3432190096C1EB /* RestaurantPizza.xcdatamodeld */,
 				F25A9F0A1B3432190096C1EB /* Supporting Files */,
+				F24CA3A91B34506F000FBE38 /* RestaurantDetailViewController.h */,
+				F24CA3AA1B34506F000FBE38 /* RestaurantDetailViewController.m */,
 			);
 			path = RestaurantPizza;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				F25A9F101B3432190096C1EB /* AppDelegate.m in Sources */,
 				F25A9F161B3432190096C1EB /* PizzaRestaurantsMainController.m in Sources */,
 				F24CA3A51B344D86000FBE38 /* RestaurantsTableViewCell.m in Sources */,
+				F24CA3AB1B34506F000FBE38 /* RestaurantDetailViewController.m in Sources */,
 				F25A9F0D1B3432190096C1EB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

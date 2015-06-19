@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-1284" y="296"/>
         </scene>
-        <!--Find Nearby Pizza Restaurants-->
+        <!--Nearby Pizza Restaurants-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Find Nearby Pizza Restaurants" id="BYZ-38-t0r" customClass="PizzaRestaurantsMainController" sceneMemberID="viewController">
+                <viewController title="Nearby Pizza Restaurants" id="BYZ-38-t0r" customClass="PizzaRestaurantsMainController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -98,18 +98,72 @@
                             <constraint firstAttribute="centerX" secondItem="UXR-qW-Hxy" secondAttribute="centerX" id="yUf-sW-V6d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Find Neaby Pizza Restaurants" id="erV-0s-jjH"/>
+                    <navigationItem key="navigationItem" title="Nearby Pizza Restaurants" id="erV-0s-jjH"/>
                     <connections>
                         <outlet property="foundRestLbl" destination="UXR-qW-Hxy" id="XcP-Kq-mwO"/>
                         <outlet property="searchActivityIndicator" destination="CyG-Pp-8sR" id="e4O-Dg-SGJ"/>
                         <outlet property="searchAgainBut" destination="s2E-tg-Juq" id="H2t-Mv-RGa"/>
                         <outlet property="searchProgressLbl" destination="AX7-cd-Hab" id="fP1-g3-bf5"/>
                         <outlet property="tblView" destination="83N-pG-ga2" id="vZx-1B-d3w"/>
+                        <segue destination="PhX-I4-QsM" kind="show" identifier="toDetail" id="rGa-SN-nJV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-292" y="311"/>
+        </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="dfa-D0-7Us">
+            <objects>
+                <viewController id="PhX-I4-QsM" customClass="RestaurantDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6QF-Sl-iWC"/>
+                        <viewControllerLayoutGuide type="bottom" id="hcL-at-5en"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZbI-bs-nZ1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="20e-iN-2DL">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="sGi-cv-mi2" style="IBUITableViewCellStyleDefault" id="a9P-T6-vqc">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9P-T6-vqc" id="CYc-Mc-yZH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sGi-cv-mi2">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PhX-I4-QsM" id="Tad-Wt-fgd"/>
+                                    <outlet property="delegate" destination="PhX-I4-QsM" id="TFp-YT-YC2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="20e-iN-2DL" secondAttribute="trailing" id="Fpu-UC-u4c"/>
+                            <constraint firstItem="20e-iN-2DL" firstAttribute="leading" secondItem="ZbI-bs-nZ1" secondAttribute="leading" id="Zbk-ch-1Je"/>
+                            <constraint firstItem="20e-iN-2DL" firstAttribute="top" secondItem="ZbI-bs-nZ1" secondAttribute="top" constant="64" id="h8E-RW-57f"/>
+                            <constraint firstAttribute="bottom" secondItem="20e-iN-2DL" secondAttribute="bottom" id="ug1-Q8-H66"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tblView" destination="20e-iN-2DL" id="B1w-7l-Y69"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d69-so-JoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="286"/>
         </scene>
     </scenes>
 </document>

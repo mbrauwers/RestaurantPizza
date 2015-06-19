@@ -9,6 +9,7 @@
 #import "PizzaRestaurantsMainController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "RestaurantsTableViewCell.h"
+#import "RestaurantDetailViewController.h"
 
 #define kFoursquareClientKey @"S55S3TO5FTVJFNEVLWMEAZE4JYRPXQHD1DL45J3AFYWALSHH"
 #define kFoursquareClientSecret @"3ZVMLG1PWLTJZFWO4OLLFRZEN0GLZQTXIMRFBF1MVIE1UV3I"
@@ -33,6 +34,9 @@
 
 //current user location
 @property (nonatomic, strong) CLLocation* currLocation;
+
+//the selected index of the table view, used on prepare for segue to pass info
+@property (nonatomic) NSUInteger selectedIndex;
 
 @end
 
@@ -219,6 +223,8 @@
         return [str1 compare:str2];
     }];
     
+    NSLog(@"places: %@", self.places);
+    
     [self.tblView reloadData];
 }
 
@@ -246,6 +252,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.selectedIndex = indexPath.row;
+    [self performSegueWithIdentifier:@"toDetail" sender:self];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass: [RestaurantDetailViewController class]]) {
+        RestaurantDetailViewController* rvc = (RestaurantDetailViewController*) segue.destinationViewController;
+        rvc.restaurantInfo = self.places[self.selectedIndex];
+    }
 }
 
 
